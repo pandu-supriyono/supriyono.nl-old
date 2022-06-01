@@ -1,0 +1,63 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+  <div class="hero | flow container">
+    <p class="hero__text">Web&shy;ontwikkeling voor een inclusieve digitale toekomst</p>
+
+    <div class="hero__blurb">
+      <p class="hero__blurb-text">
+        Onze maatschappij wordt elke dag steeds digitaler. Ik vind het belangrijk dat iedereen in deze digitale maatschappij telt en dat we in harmonie staan met het milieu.
+      </p>
+      <p class="hero__blurb-text">
+        Als webontwikkelaar bouw ik toegankelijke en energiebewuste websites om naar een gezonde, inclusieve en duurzame digitale toekomst te werken. 
+      </p>
+
+      <ul class="hero__contact-links">
+        <li class="hero__contact-link-item">
+          <a class="hero__contact-link" href="mailto:mail@supriyono.nl">Email</a>
+        </li>
+        <li class="hero__contact-link-item">
+          <a class="hero__contact-link" href="https://github.com/pandu-supriyono">GitHub</a>
+        </li>
+        <li class="hero__contact-link-item">
+          <a class="hero__contact-link" href="https://twitter.com/pandu_yono">Twitter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="latest-posts | container">
+    <div class="latest-posts__header | flow">
+      <h2 class="latest-posts__title">Nieuwste blogberichten</h2>
+      <a class="latest-posts__see-all | inline-block" href="/blog">Zie alle blogberichten</a>
+    </div>
+
+    <ul class="latest-posts__articles | auto-grid">
+      {% for post in collections.posts | reverse %}
+        {% if loop.index0 < 6 %}
+          <li class="latest-posts__article">
+            <div class="tags">
+              {% for tag in post.data.tags %}
+                <a class="tag" href="/blog/tags/{{tag | slugify}}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            <a href="{{ post.url }}" class="latest-posts__article-link">
+              <h3 class="latest-posts__article-title">{{ post.data.title }}</h3>
+            </a>
+            <div class="latest-posts__footer">
+              <div class="latest-posts__article-date">Geplaatst op {{ post.date | formatDateNl }}</div>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="rss | container flow">
+    <div class="rss__content | flow">
+      <h2 class="rss__title">Altijd op de hoogte blijven? En gebruik je RSS?</h2>
+      <a class="rss__link | inline-block" href="/feed.xml">Abboneer op mijn RSS feed</a>
+    </div>
+  </div>
+
+{% endblock %}

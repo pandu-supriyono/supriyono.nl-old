@@ -1,0 +1,31 @@
+{% extends "./base.njk" %}
+
+{% set prism %}
+{% include "styles/prism.css" %}
+{% endset %}
+
+{% block style %}
+  {{ super() }}
+  {{ prism | postcss | safe }}
+{% endblock %}
+
+{% block main %}
+  <header class="blog-header">
+    <div class="container container--narrow flow">
+      <h1 class="blog-title">{{ title }}</h1>
+      <div class="tags">
+        {% for tag in tags %}
+          <a class="tag" href="/blog/tags/{{tag | slugify}}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      <div class="blog-date">
+        Geplaatst op {{ date | formatDateNl }}
+      </div>
+  </header>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="blog-content container container--narrow">
+    {{ content | safe }}
+  </div>
+{% endblock %}

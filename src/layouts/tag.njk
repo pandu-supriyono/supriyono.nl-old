@@ -1,0 +1,32 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+  <div class="blog | container flow">
+    <h1 class="page-title">Blogartikels over: {{ tag }} </h1>
+    <div class="blog__blurb">
+      <a href="/blog" class="blog__blurb-title">Terug naar alle blogartikels</a>
+    </div>
+  </div>
+
+  {% set taglist = collections[tag] %}
+
+  <ul class="blog-list">
+    {% for post in taglist | reverse %}
+      <li class="blog-list__item">
+        <div class="container">
+          <div class="blog-list__item-date">
+            {{ post.date | formatDateNl }}
+          </div>
+          <div class="tags">
+            {% for tag in post.data.tags %}
+              <a class="tag" href="/blog/tags/{{tag | slugify}}">{{ tag }}</a>
+            {% endfor %}
+            </div>
+          <a class="blog-list__item-link" href="{{ post.url }}">
+            <h2 class="blog-list__item-title">{{ post.data.title }}</h2>
+          </a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

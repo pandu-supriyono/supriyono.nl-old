@@ -1,0 +1,67 @@
+{% set css %}
+{% include "styles/index.css" %}
+{% endset %}
+
+{% set reset %}
+{% include "styles/reset.css" %}
+{% endset %}
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Pandu Supriyono</title>
+
+    <style>
+      {% block style %}
+        {{reset | postcss | safe}}
+        {{css | postcss | safe}}
+      {% endblock %}
+    </style>
+  </head>
+  <body class="dark">
+
+    <header class="header | container">
+      <a class="header__title header__link" href="/">
+        <span aria-hidden="true">&#11044;</span>
+        <span>Pandu Supriyono</span></h1>
+    </a>
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li class="header__menu-item">
+          <a href="/blog" class="header__menu-link header__link">Blog</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="/over" class="header__menu-link header__link">Over</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="mailto:pandu@supriyono.nl" class="header__menu-link header__link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    {% block main %}
+      {{ content | safe }}
+    {% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__contact-links">
+        <a class="footer__link footer__contact-link" href="mailto:mail@supriyono.nl">Email</a>
+        <a class="footer__link footer__contact-link" href="https://github.com/pandu-supriyono">GitHub</a>
+        <a class="footer__link footer__contact-link" href="https://twitter.com/pandu_yono">Twitter</a>
+      </div>
+      <div class="footer__meta">
+        <div>&copy; Pandu Supriyono 2022</div>
+        <div class="footer__meta-links">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
