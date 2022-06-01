@@ -66,7 +66,7 @@ const result = await fetch("http://get-request.nl/people")
                 .then((payload) => expectedPayload.parse(payload))
 ```
 
-In het kort: zorg dat je zeker weet dat de data waarmee je handeld goed is om te gebruiken. Dat wil zeggen: overeenkomend met wat je verwacht. Parsen of valideren
+In het kort: zorg dat je zeker weet dat de data waarmee je handelt goed is om te gebruiken. Dat wil zeggen: overeenkomend met wat je verwacht. Parsen of valideren
 is de enige manier om dit te doen. Daarnaast biedt dit je ook een kans om ervoor te zorgen dat een error goed wordt behandeld en uiteindelijk op een 'vriendelijke'
 manier weergegeven aan je eindgebruiker.
 
