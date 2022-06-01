@@ -232,6 +232,7 @@ a:hover {
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
+  row-gap: 0.5rem;
 }
 
 .latest-posts__title {
@@ -314,11 +315,6 @@ a:hover {
 
 .latest-posts__footer {
   margin-top: auto;
-}
-
-.latest-posts__see-all-large {
-  margin-top: 2em;
-  font-size: calc(1rem * var(--type-ratio) * 2);
 }
 
 .rss {
