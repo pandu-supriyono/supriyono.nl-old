@@ -33,8 +33,8 @@ const result = await fetch("http://get-request.nl/people")
 
 Tevens kan je met [Axios nog een generic gebruiken](https://github.com/axios/axios/blob/7d6bddba2d8de29c263feaef4c40daa50cb4b176/index.d.ts#L146).
 
-Ik heb zelf weinig ervaring in werken bij een team dus ik vraag mij af of dit ook in de echte wereld gebeurt? Ik vind zo'n manier van HTTP verzoeken maken
-zeer griezelig; hoe weet je zeker dat hetgeen wat je verwacht, ook daadwerkelijk gaat krijgen? Als blijkt dat de API is verandert of als je een andere
+Ik heb zelf weinig ervaring in werken in teams dus ik vraag mij af of dit ook in de echte wereld gebeurt? Ik vind zo'n manier van HTTP verzoeken maken
+zeer griezelig; hoe weet je zeker dat hetgeen wat je verwacht, ook daadwerkelijk gaat krijgen? Als blijkt dat de API is veranderd of als je een andere
 (menselijk) fout hebt gemaakt is de kans groot dat je gaat sjoemelen met data die je niet eens hebt, waardoor je toepassing gaat crashen. Net zo goed geen
 TypeScript gebruiken?
 
