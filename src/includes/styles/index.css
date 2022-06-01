@@ -81,7 +81,7 @@ a:hover {
 
 .auto-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min-size, 300px), 100%), 1fr));
   gap: var(--auto-grid-gap, 1em);
 }
 
@@ -239,7 +239,7 @@ a:hover {
 }
 
 .latest-posts__articles {
-  --auto-grid-min-size: 500px;
+  --auto-grid-min-size: 30rem;
 
   margin-left: 0;
   margin-bottom: 0;
