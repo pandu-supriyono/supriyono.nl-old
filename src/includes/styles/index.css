@@ -492,7 +492,7 @@ a:hover {
 .about-hero__lead {
   line-height: 1.125;
   font-size: clamp(
-    1rem * var(--type-ratio) * 2,
+    1rem * var(--type-ratio) * 1,
     1rem + 2.5vw,
     calc(1rem * var(--type-ratio) * 3)
   );
